@@ -7,7 +7,7 @@
   <meta name="robots" content="index, follow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#050607">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
   <link rel="canonical" href="https://archosystem.com/">
   <meta property="og:title" content="ArchoSystem | Deployable Infrastructure">
   <meta property="og:description" content="ArchoSystem is a patent-pending deployable infrastructure platform for controlled formation, validation, and operation of infrastructure assets, starting with ArchoTank.">
@@ -134,8 +134,8 @@
   </svg>
 
   <header class="site-header" id="top">
-    <a class="brand" href="#top" aria-label="ArchoSystem home">
-      <img src="public/images/archo-logo-header.png" alt="ArchoSystem logo" width="192" height="164" decoding="async">
+    <a class="brand" href="#top">
+      <img src="public/images/archo-logo-header.png" alt="" width="192" height="164" decoding="async">
       <span>ArchoSystem</span>
     </a>
 
@@ -458,7 +458,7 @@
           <p>All inquiries are reviewed for mission alignment.</p>
         </div>
 
-        <form class="contact-form" id="brief-form" aria-describedby="form-note">
+        <form class="contact-form" id="brief-form" action="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request" method="post" enctype="text/plain" aria-describedby="form-note">
           <div class="form-field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" maxlength="120" required>
