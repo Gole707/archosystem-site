@@ -7,7 +7,7 @@
   <meta name="robots" content="index, follow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#050607">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-YXJjaG9TeXN0ZW1BbmNob3I='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
   <link rel="canonical" href="https://archosystem.com/">
   <meta property="og:title" content="ArchoSystem | Deployable Infrastructure">
   <meta property="og:description" content="ArchoSystem is a patent-pending deployable infrastructure platform for controlled formation, validation, and operation of infrastructure assets, starting with ArchoTank.">
@@ -533,5 +533,84 @@
       <p>&copy; 2026 ArchoSystem, LLC. All rights reserved. Patent pending.</p>
     </div>
   </footer>
+  <script nonce="YXJjaG9TeXN0ZW1BbmNob3I=">
+    function scrollToTarget(hash) {
+      if (!hash || hash === "#") return;
+
+      if (hash === "#top") {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        return;
+      }
+
+      var target;
+      try {
+        target = document.querySelector(hash);
+      } catch (error) {
+        return;
+      }
+
+      if (!target) return;
+
+      var header = document.querySelector("header");
+      var headerHeight = header ? header.offsetHeight : 96;
+      var extraOffset = 36;
+      var targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraOffset;
+
+      window.scrollTo({
+        top: Math.max(targetTop, 0),
+        behavior: "smooth"
+      });
+    }
+
+    function closeAnchorNavigation() {
+      var siteNav = document.querySelector(".site-nav");
+      var menuToggle = document.querySelector(".menu-toggle");
+
+      document.body.classList.remove("nav-open");
+
+      if (siteNav) {
+        siteNav.classList.remove("is-open");
+      }
+
+      if (menuToggle) {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+      }
+    }
+
+    document.addEventListener("click", function (event) {
+      var link = event.target.closest && event.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      var href = link.getAttribute("href");
+      if (!href || href === "#") return;
+
+      var target;
+      try {
+        target = document.querySelector(href);
+      } catch (error) {
+        return;
+      }
+
+      if (!target) return;
+
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      closeAnchorNavigation();
+      scrollToTarget(href);
+      history.pushState(null, "", href);
+    }, true);
+
+    window.addEventListener("load", function () {
+      if (window.location.hash) {
+        setTimeout(function () {
+          scrollToTarget(window.location.hash);
+        }, 100);
+      }
+    });
+  </script>
 </body>
 </html>
