@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ArchoSystem is a patent-pending deployable infrastructure platform for controlled formation, validation, and operation of infrastructure assets, starting with ArchoTank.">
+  <meta name="robots" content="index, follow">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#050607">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <link rel="canonical" href="https://archosystem.com/">
+  <meta property="og:title" content="ArchoSystem | Deployable Infrastructure">
+  <meta property="og:description" content="ArchoSystem is a patent-pending deployable infrastructure platform for controlled formation, validation, and operation of infrastructure assets, starting with ArchoTank.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://archosystem.com/">
+  <meta property="og:image" content="https://archosystem.com/public/images/archosystem-social.jpg">
+  <meta property="og:image:secure_url" content="https://archosystem.com/public/images/archosystem-social.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ArchoSystem deployable infrastructure platform with ArchoTank and POD execution units">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ArchoSystem | Deployable Infrastructure">
+  <meta name="twitter:description" content="ArchoSystem is a patent-pending deployable infrastructure platform for controlled formation, validation, and operation of infrastructure assets, starting with ArchoTank.">
+  <meta name="twitter:image" content="https://archosystem.com/public/images/archosystem-social.jpg">
+  <meta name="twitter:image:alt" content="ArchoSystem deployable infrastructure platform with ArchoTank and POD execution units">
+  <title>ArchoSystem | Deployable Infrastructure</title>
+  <link rel="icon" type="image/png" href="public/images/archo-logo-header.png">
+  <link rel="apple-touch-icon" href="public/images/archo-logo-header.png">
+  <link rel="preload" as="image" href="public/images/archosystem-hero-v2.jpg" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <symbol id="icon-shield" viewBox="0 0 24 24">
+      <path d="M12 3.2 19 6v5.2c0 4.6-2.8 8.1-7 9.6-4.2-1.5-7-5-7-9.6V6l7-2.8Z"></path>
+    </symbol>
+    <symbol id="icon-shield-check" viewBox="0 0 24 24">
+      <path d="M12 3.2 19 6v5.2c0 4.6-2.8 8.1-7 9.6-4.2-1.5-7-5-7-9.6V6l7-2.8Z"></path>
+      <path d="m8.7 12.1 2.1 2.1 4.6-5"></path>
+    </symbol>
+    <symbol id="icon-target" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="7.4"></circle>
+      <circle cx="12" cy="12" r="3.1"></circle>
+      <path d="M12 2.8v3.1M12 18.1v3.1M2.8 12h3.1M18.1 12h3.1"></path>
+    </symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.3"></circle>
+      <path d="M12 7.3V12l3.2 2"></path>
+    </symbol>
+    <symbol id="icon-package" viewBox="0 0 24 24">
+      <path d="m4.2 7.4 7.8-4 7.8 4v9.2l-7.8 4-7.8-4V7.4Z"></path>
+      <path d="m4.8 7.7 7.2 3.8 7.2-3.8M12 11.5v8.8M8.1 5.4l7.8 4"></path>
+    </symbol>
+    <symbol id="icon-signal" viewBox="0 0 24 24">
+      <path d="M5 17.8v-2.6M9.7 17.8v-6M14.3 17.8V8.4M19 17.8V5.6"></path>
+      <path d="M4.2 19.4h15.6"></path>
+    </symbol>
+    <symbol id="icon-warning" viewBox="0 0 24 24">
+      <path d="M12 3.8 21 19H3L12 3.8Z"></path>
+      <path d="M12 8.8v4.9M12 16.8h.01"></path>
+    </symbol>
+    <symbol id="icon-droplet" viewBox="0 0 24 24">
+      <path d="M12 3.4s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11Z"></path>
+      <path d="M9.2 15.1c.4 1.5 1.5 2.3 2.9 2.3"></path>
+    </symbol>
+    <symbol id="icon-factory" viewBox="0 0 24 24">
+      <path d="M4 20V9.2l4.8 3.1V9.2l4.8 3.1V5h4.5v15H4Z"></path>
+      <path d="M7.2 16.2h2.2M12 16.2h2.2M16.8 16.2H19"></path>
+    </symbol>
+    <symbol id="icon-chip" viewBox="0 0 24 24">
+      <rect x="7" y="7" width="10" height="10" rx="1.4"></rect>
+      <path d="M10 3.8V7M14 3.8V7M10 17v3.2M14 17v3.2M3.8 10H7M3.8 14H7M17 10h3.2M17 14h3.2"></path>
+      <rect x="10" y="10" width="4" height="4" rx=".6"></rect>
+    </symbol>
+    <symbol id="icon-clipboard-request" viewBox="0 0 24 24">
+      <path d="M8.3 4.8H6.4a2 2 0 0 0-2 2v12.1a2 2 0 0 0 2 2h11.2a2 2 0 0 0 2-2V6.8a2 2 0 0 0-2-2h-1.9"></path>
+      <path d="M8.2 6.6V4.8h7.6v1.8H8.2Z"></path>
+      <path d="M8.1 11.2h7.8M8.1 15h4.8M15.9 14.5l1.4 1.4 2.4-2.7"></path>
+    </symbol>
+    <symbol id="icon-blueprint" viewBox="0 0 24 24">
+      <rect x="4" y="4.4" width="16" height="15.2" rx="1.4"></rect>
+      <path d="M8 4.4v15.2M4 9.2h16M11.2 13.1h5.2v3.6h-5.2zM11.2 6.6h5.9"></path>
+    </symbol>
+    <symbol id="icon-cube-network" viewBox="0 0 24 24">
+      <path d="m12 3.8 6.6 3.7v7.2L12 18.6l-6.6-3.9V7.5L12 3.8Z"></path>
+      <path d="M5.8 7.7 12 11.4l6.2-3.7M12 11.4v7.2"></path>
+      <path d="M4.2 19.8h3.4M16.4 19.8h3.4M12 18.6v2.2"></path>
+      <circle cx="3.6" cy="19.8" r="1.1"></circle>
+      <circle cx="20.4" cy="19.8" r="1.1"></circle>
+    </symbol>
+    <symbol id="icon-robot-arm" viewBox="0 0 24 24">
+      <path d="M4.2 19.5h8.4M6 19.5v-4.2h4.8v4.2"></path>
+      <path d="M8.4 15.3 12 9.8l4.2 2.7-3.5 5.3"></path>
+      <path d="m12 9.8 1.6-2.5 4.2 2.7-1.6 2.5"></path>
+      <path d="m17.8 10 2.5-3.8M18.8 4.8l2.8 1.8M11.8 7.8l-1.9-1.2"></path>
+      <circle cx="8.4" cy="15.3" r="1.2"></circle>
+    </symbol>
+    <symbol id="icon-truck" viewBox="0 0 24 24">
+      <path d="M3.6 7.2h10.5v8.6H3.6zM14.1 10.3h3.7l2.6 3.2v2.3h-6.3z"></path>
+      <path d="M6.2 18a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6ZM17.8 18a1.8 1.8 0 1 0 0-3.6 1.8 1.8 0 0 0 0 3.6Z"></path>
+      <path d="M8 15.8h7.9"></path>
+    </symbol>
+    <symbol id="icon-tank-coupling" viewBox="0 0 24 24">
+      <path d="M6 9.4c0-2.2 2.7-4 6-4s6 1.8 6 4v5.2c0 2.2-2.7 4-6 4s-6-1.8-6-4V9.4Z"></path>
+      <path d="M6 9.4c0 2.2 2.7 4 6 4s6-1.8 6-4"></path>
+      <path d="M3.6 12.2H6M18 12.2h2.4M3.6 15.6H6M18 15.6h2.4"></path>
+    </symbol>
+    <symbol id="icon-activity" viewBox="0 0 24 24">
+      <path d="M3.5 12h3.8l2-5.2 4 10.4 2.1-5.2h5.1"></path>
+      <path d="M4.2 18.8h15.6"></path>
+    </symbol>
+    <symbol id="icon-document-chart" viewBox="0 0 24 24">
+      <path d="M6.1 3.8h8.1l3.7 3.7v12.7H6.1V3.8Z"></path>
+      <path d="M14.2 3.8v3.7h3.7M9.1 16.7v-3.1M12 16.7v-5M14.9 16.7v-7M9 18.9h6"></path>
+    </symbol>
+    <symbol id="icon-hardhat" viewBox="0 0 24 24">
+      <path d="M4.2 14.3h15.6v3.3H4.2v-3.3Z"></path>
+      <path d="M6.4 14.3v-2.2a5.6 5.6 0 0 1 11.2 0v2.2M10 6.9v7.4M14 6.9v7.4"></path>
+      <path d="M5.8 17.6h12.4"></path>
+    </symbol>
+    <symbol id="icon-user-outline" viewBox="0 0 24 24">
+      <circle cx="12" cy="7.4" r="3.4"></circle>
+      <path d="M5.2 20.2c.7-4.1 3.2-6.2 6.8-6.2s6.1 2.1 6.8 6.2"></path>
+    </symbol>
+    <symbol id="icon-documents" viewBox="0 0 24 24">
+      <path d="M8.1 4.2h7.3l3.2 3.2v11.1H8.1V4.2Z"></path>
+      <path d="M15.4 4.2v3.2h3.2M5.4 7.2v12.6h10.1M10.9 11.2h4.8M10.9 14.4h4.8"></path>
+    </symbol>
+    <symbol id="icon-shield-star" viewBox="0 0 24 24">
+      <path d="M12 3.2 19 6v5.2c0 4.6-2.8 8.1-7 9.6-4.2-1.5-7-5-7-9.6V6l7-2.8Z"></path>
+      <path d="m12 8.1 1 2.1 2.3.3-1.7 1.6.4 2.3-2-1.1-2 1.1.4-2.3-1.7-1.6 2.3-.3 1-2.1Z"></path>
+    </symbol>
+  </svg>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="ArchoSystem home">
+      <img src="public/images/archo-logo-header.png" alt="ArchoSystem logo" width="192" height="164" decoding="async">
+      <span>ArchoSystem</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="#platform-stack">System</a>
+      <a href="#problem">Problem</a>
+      <a href="#archoos">ArchoOS</a>
+      <a href="#archotank">ArchoTank</a>
+      <a href="#missions">Missions</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-brief" href="#contact">Request Brief</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-visual" aria-hidden="true">
+        <img src="public/images/archosystem-hero-v2.jpg" alt="" width="1672" height="941" fetchpriority="high" decoding="async">
+      </div>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">Patent Pending / Deployable Infrastructure Platform</p>
+          <h1 id="hero-title"><span class="hero-title-line">Deployable Infrastructure.</span><br><span class="hero-title-line">Controlled From Start to Finish.</span></h1>
+          <p class="lead">ArchoSystem packages, deploys, forms, validates, and tracks hardened infrastructure assets, starting with ArchoTank.</p>
+          <div class="button-row">
+            <a class="button button-primary" href="#contact">Request Technical Brief</a>
+            <a class="button button-secondary" href="#platform-stack">View System</a>
+          </div>
+        </div>
+        <ul class="trust-strip">
+          <li><svg class="icon icon-green" aria-hidden="true"><use href="#icon-shield"></use></svg>Patent Pending</li>
+          <li><svg class="icon icon-blue" aria-hidden="true"><use href="#icon-target"></use></svg>ArchoOS-Controlled Lifecycle</li>
+          <li><svg class="icon icon-muted" aria-hidden="true"><use href="#icon-clipboard-request"></use></svg>Conceptual PE Review Complete</li>
+          <li><svg class="icon icon-green" aria-hidden="true"><use href="#icon-signal"></use></svg>Prototype Partners Sought</li>
+        </ul>
+        <p class="render-caption hero-caption">Representative deployment architecture</p>
+      </div>
+    </section>
+
+    <section class="section platform-stack-section" data-section-id="platform-stack" aria-labelledby="platform-stack-title">
+      <div class="container">
+        <div class="section-intro wide">
+          <span id="platform-stack" class="anchor-target" aria-hidden="true"></span>
+          <p class="eyebrow">Platform Stack</p>
+          <h2 id="platform-stack-title">ArchoTank is the first output. ArchoSystem is the platform.</h2>
+          <p>One platform connects control logic, execution units, formation, asset output, and validation records.</p>
+        </div>
+
+        <div class="card-grid five platform-stack">
+          <article class="card">
+            <span class="card-index">01</span>
+            <h3>ArchoOS</h3>
+            <p>Controls lifecycle, readiness, telemetry, validation, and records.</p>
+          </article>
+
+          <article class="card accent-orange">
+            <span class="card-index">02</span>
+            <h3>POD-F / POD-M / POD-E</h3>
+            <p>Structure, material, equipment, and control units for field execution.</p>
+          </article>
+
+          <article class="card">
+            <span class="card-index">03</span>
+            <h3>Controlled Formation</h3>
+            <p>A defined field process, not conventional construction.</p>
+          </article>
+
+          <article class="card">
+            <span class="card-index">04</span>
+            <h3>ArchoTank</h3>
+            <p>The first deployable infrastructure asset produced by the system.</p>
+          </article>
+
+          <article class="card">
+            <span class="card-index">05</span>
+            <h3>Validation Record</h3>
+            <p>The proof layer tying data, inspections, materials, and lifecycle history together.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section problem-section" data-section-id="problem" aria-labelledby="problem-title">
+      <div class="container two-column">
+        <div class="section-intro">
+          <span id="problem" class="anchor-target" aria-hidden="true"></span>
+          <p class="eyebrow">The Problem</p>
+          <h2 id="problem-title">Infrastructure delivery is still too slow, fragmented, and hard to verify.</h2>
+          <p>Traditional field construction depends on site-built workflows, weather windows, fragmented trades, and after-the-fact inspection. That creates risk when communities, bases, emergency teams, and industrial operators need hardened infrastructure fast.</p>
+          <a class="button button-secondary" href="#system">See the Shift</a>
+        </div>
+        <div class="stacked-cards">
+          <article class="card">
+            <span class="card-index">01</span>
+            <h3 class="icon-heading"><svg class="icon icon-muted" aria-hidden="true"><use href="#icon-clock"></use></svg>Slow to Build</h3>
+            <p>Site-built workflows, long schedules, weather exposure, and rework.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">02</span>
+            <h3 class="icon-heading"><svg class="icon icon-green" aria-hidden="true"><use href="#icon-shield-check"></use></svg>Hard to Verify</h3>
+            <p>Quality is often documented after installation, not during formation.</p>
+          </article>
+          <article class="card">
+            <span class="card-index">03</span>
+            <h3 class="icon-heading"><svg class="icon icon-muted" aria-hidden="true"><use href="#icon-target"></use></svg>Difficult to Deploy</h3>
+            <p>Critical assets still depend on heavy logistics, specialized labor, and site-specific work.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shift-section" data-section-id="system" aria-labelledby="shift-title">
+      <div class="container">
+        <div class="centered">
+          <span id="system" class="anchor-target" aria-hidden="true"></span>
+          <p class="eyebrow">The Shift</p>
+          <h2 id="shift-title">From Construction to Controlled Deployment</h2>
+          <p>ArchoSystem treats each asset as a controlled infrastructure unit moving through a defined execution sequence.</p>
+        </div>
+
+        <table class="comparison" aria-label="Conventional delivery compared with ArchoSystem delivery">
+          <thead>
+            <tr>
+              <th class="comparison-head conventional" scope="col">Conventional Delivery</th>
+              <th class="comparison-head archo" scope="col">ArchoSystem Delivery</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="comparison-cell conventional muted-mark"><span class="comparison-content"><svg class="icon comparison-icon" aria-hidden="true"><use href="#icon-hardhat"></use></svg>Site-built</span></td>
+              <td class="comparison-cell archo green-mark"><span class="comparison-content"><span class="comparison-check" aria-hidden="true">&#10003;</span>Field-manufactured</span></td>
+            </tr>
+            <tr>
+              <td class="comparison-cell conventional muted-mark"><span class="comparison-content"><svg class="icon comparison-icon" aria-hidden="true"><use href="#icon-user-outline"></use></svg>Trade-heavy</span></td>
+              <td class="comparison-cell archo green-mark"><span class="comparison-content"><span class="comparison-check" aria-hidden="true">&#10003;</span>Operator-led</span></td>
+            </tr>
+            <tr>
+              <td class="comparison-cell conventional muted-mark"><span class="comparison-content"><svg class="icon comparison-icon" aria-hidden="true"><use href="#icon-clipboard-request"></use></svg>Inspected after</span></td>
+              <td class="comparison-cell archo green-mark"><span class="comparison-content"><span class="comparison-check" aria-hidden="true">&#10003;</span>Validated during</span></td>
+            </tr>
+            <tr>
+              <td class="comparison-cell conventional muted-mark"><span class="comparison-content"><svg class="icon comparison-icon" aria-hidden="true"><use href="#icon-documents"></use></svg>Fragmented documents</span></td>
+              <td class="comparison-cell archo green-mark"><span class="comparison-content"><span class="comparison-check" aria-hidden="true">&#10003;</span>Single lifecycle record</span></td>
+            </tr>
+            <tr>
+              <td class="comparison-cell conventional muted-mark"><span class="comparison-content"><svg class="icon comparison-icon" aria-hidden="true"><use href="#icon-package"></use></svg>Materials arrive loose</span></td>
+              <td class="comparison-cell archo green-mark"><span class="comparison-content"><span class="comparison-check" aria-hidden="true">&#10003;</span>Execution units arrive controlled</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section archoos-section grid-section" data-section-id="archoos" aria-labelledby="archoos-title">
+      <div class="container container-wide">
+        <div class="section-intro wide">
+          <span id="archoos" class="anchor-target" aria-hidden="true"></span>
+          <p class="eyebrow">Control Layer</p>
+          <h2 id="archoos-title">ArchoOS governs the lifecycle from demand to validated infrastructure.</h2>
+          <p>It manages readiness, state transitions, telemetry, validation records, and reporting across each infrastructure unit.</p>
+        </div>
+
+        <figure class="archoos-visual">
+          <img src="public/images/10-archoos-dark-diagram.jpg" alt="ArchoOS dashboard interface for lifecycle state, readiness, telemetry, and validation control" width="1672" height="941" loading="lazy" decoding="async">
+          <figcaption class="render-caption">Representative ArchoOS control interface; data illustrative.</figcaption>
+        </figure>
+
+        <ol class="lifecycle-nodes">
+          <li class="signal-orange"><svg class="icon lifecycle-icon" aria-hidden="true"><use href="#icon-blueprint"></use></svg><span>Define</span></li>
+          <li><svg class="icon lifecycle-icon" aria-hidden="true"><use href="#icon-cube-network"></use></svg><span>Simulate</span></li>
+          <li><svg class="icon lifecycle-icon" aria-hidden="true"><use href="#icon-robot-arm"></use></svg><span>Fabricate</span></li>
+          <li><svg class="icon lifecycle-icon" aria-hidden="true"><use href="#icon-truck"></use></svg><span>Deploy</span></li>
+          <li><svg class="icon lifecycle-icon" aria-hidden="true"><use href="#icon-tank-coupling"></use></svg><span>Form</span></li>
+          <li class="active"><svg class="icon lifecycle-icon" aria-hidden="true"><use href="#icon-shield-check"></use></svg><span>Validate</span></li>
+          <li><svg class="icon lifecycle-icon" aria-hidden="true"><use href="#icon-activity"></use></svg><span>Operate</span></li>
+          <li><svg class="icon lifecycle-icon" aria-hidden="true"><use href="#icon-document-chart"></use></svg><span>Report</span></li>
+        </ol>
+
+        <div class="card-grid three">
+          <article class="card">
+            <h3 class="icon-heading"><svg class="icon icon-orange" aria-hidden="true"><use href="#icon-shield-check"></use></svg>State Before Action</h3>
+            <p>No step advances until required conditions are met.</p>
+          </article>
+          <article class="card">
+            <h3 class="icon-heading"><svg class="icon icon-blue" aria-hidden="true"><use href="#icon-chip"></use></svg>Physical-Digital Lock</h3>
+            <p>Every physical unit maps to a controlled digital record.</p>
+          </article>
+          <article class="card">
+            <h3 class="icon-heading"><svg class="icon icon-green" aria-hidden="true"><use href="#icon-shield-check"></use></svg>Evidence-Based Validation</h3>
+            <p>Telemetry, inspections, materials, and lifecycle events become the validation record.</p>
+          </article>
+        </div>
+
+        <div class="button-row">
+          <a class="button button-primary" href="#contact">Request Technical Brief</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section archotank-section" data-section-id="archotank" aria-labelledby="archotank-title">
+      <div class="container container-wide product-grid">
+        <div class="product-copy">
+          <span id="archotank" class="anchor-target" aria-hidden="true"></span>
+          <p class="eyebrow dark">First System Output</p>
+          <h2 id="archotank-title">First Output: ArchoTank</h2>
+          <p class="lead-dark">ArchoTank is the first infrastructure asset produced through ArchoSystem. It is a load-bearing containment system designed around controlled formation, integrated containment, field deployment, and lifecycle validation.</p>
+          <p>Designed for water, wastewater, emergency storage, fuel-support, industrial containment, and future infrastructure applications, subject to project-specific engineering.</p>
+          <div class="button-row">
+            <a class="button button-dark" href="#missions">View Missions</a>
+            <a class="button button-light-outline" href="#contact">Request Technical Brief</a>
+          </div>
+        </div>
+        <div class="product-image">
+          <img src="public/images/07-archotank-product-x.jpg" alt="Dark graphite ArchoTank asset render" width="1672" height="941" loading="lazy" decoding="async">
+          <p class="render-caption">Representative ArchoTank asset render</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="card-grid four light-cards">
+          <article class="card light">
+            <h3>Load-Bearing Structure</h3>
+            <p>Primary structural body designed for containment applications.</p>
+          </article>
+          <article class="card light">
+            <h3>Integrated Service Layer</h3>
+            <p>Barrier, liner, coating, or service-specific containment layer as required by application.</p>
+          </article>
+          <article class="card light">
+            <h3>Controlled Formation</h3>
+            <p>Formation sequence governed by defined process conditions and validation logic.</p>
+          </article>
+          <article class="card light">
+            <h3>Configurable Interfaces</h3>
+            <p>Inlets, outlets, drains, vents, access, monitoring, and mission-specific options.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section missions-section" data-section-id="missions" aria-labelledby="missions-title">
+      <div class="container">
+        <div class="centered">
+          <span id="missions" class="anchor-target" aria-hidden="true"></span>
+          <p class="eyebrow">Mission Use Cases</p>
+          <h2 id="missions-title"><span class="mission-title-line">Built for infrastructure gaps where</span><br class="desktop-only"> <span class="mission-title-line">speed, durability, and verification matter.</span></h2>
+          <p>ArchoSystem starts with storage and containment needs in environments where conventional delivery is too slow, fragmented, or difficult to verify.</p>
+        </div>
+
+        <div class="card-grid four mission-grid">
+          <article class="mission-card green">
+            <h3 class="icon-heading"><svg class="icon icon-green" aria-hidden="true"><use href="#icon-shield-star"></use></svg>Defense Readiness</h3>
+            <p>Water, fuel-support, and containment assets for bases, remote sites, and expeditionary environments.</p>
+          </article>
+          <article class="mission-card blue">
+            <h3 class="icon-heading"><svg class="icon icon-blue" aria-hidden="true"><use href="#icon-warning"></use></svg>Disaster Response</h3>
+            <p>Rapid storage and containment for wildfire, hurricane, flood, and emergency staging.</p>
+          </article>
+          <article class="mission-card cyan">
+            <h3 class="icon-heading"><svg class="icon icon-blue" aria-hidden="true"><use href="#icon-droplet"></use></svg>Municipal Infrastructure</h3>
+            <p>Water, wastewater, stormwater, and fire protection for aging communities.</p>
+          </article>
+          <article class="mission-card steel">
+            <h3 class="icon-heading"><svg class="icon icon-muted" aria-hidden="true"><use href="#icon-factory"></use></svg>Industrial &amp; Energy</h3>
+            <p>Process fluids, thermal storage, environmental containment, and future infrastructure profiles.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section status-section" data-section-id="status" aria-labelledby="status-title">
+      <div class="container two-column">
+        <div class="section-intro">
+          <span id="status" class="anchor-target" aria-hidden="true"></span>
+          <p class="eyebrow">Current Status</p>
+          <h2 id="status-title">Current Development Status</h2>
+          <p>ArchoSystem is a patent-pending platform in prototype-development stage. Conceptual engineering review has been completed. Prototype validation partners, test sites, engineering collaborators, and mission-aligned funding pathways are being pursued. Project-specific engineering is required before deployment.</p>
+          <div class="button-row">
+            <a class="button button-primary" href="#contact">Request Technical Brief</a>
+          </div>
+        </div>
+
+        <div class="status-grid">
+          <article class="status-card">
+            <span>IP</span>
+            <h3 class="icon-heading"><svg class="icon icon-green" aria-hidden="true"><use href="#icon-shield"></use></svg>Patent Pending</h3>
+            <p>System and method coverage has been filed for the platform architecture and controlled formation methods.</p>
+          </article>
+          <article class="status-card">
+            <span>Engineering</span>
+            <h3 class="icon-heading"><svg class="icon icon-muted" aria-hidden="true"><use href="#icon-target"></use></svg>Conceptual PE Review Complete</h3>
+            <p>Review supports conceptual plausibility. It is not final design certification, code approval, or construction authorization.</p>
+          </article>
+          <article class="status-card">
+            <span>Validation</span>
+            <h3 class="icon-heading"><svg class="icon icon-blue" aria-hidden="true"><use href="#icon-package"></use></svg>Prototype Partners Sought</h3>
+            <p>Validation partners, test sites, engineering collaborators, and mission-aligned funding pathways are being pursued.</p>
+          </article>
+          <article class="status-card">
+            <span>Deployment</span>
+            <h3 class="icon-heading"><svg class="icon icon-orange" aria-hidden="true"><use href="#icon-warning"></use></svg>Project-Specific Engineering Required</h3>
+            <p>Project-specific engineering, approval, testing, and qualification remain required before deployment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section grid-section" data-section-id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="section-intro">
+          <span id="contact" class="anchor-target" aria-hidden="true"></span>
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Discuss a prototype, pilot, or technical review.</h2>
+          <p>Use the form to request a technical brief, pilot discussion, prototype validation conversation, or mission-fit review.</p>
+          <p>All inquiries are reviewed for mission alignment.</p>
+        </div>
+
+        <form class="contact-form" id="brief-form" aria-describedby="form-note">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" maxlength="120" required>
+          </div>
+
+          <div class="form-field">
+            <label for="organization">Organization</label>
+            <input id="organization" name="organization" type="text" autocomplete="organization" maxlength="160">
+          </div>
+
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="160" required>
+          </div>
+
+          <div class="form-field">
+            <label for="interest">Interest Type</label>
+            <select id="interest" name="interest" required>
+              <option value="">Select interest</option>
+              <option>Defense / Government</option>
+              <option>Disaster Response</option>
+              <option>Municipal Infrastructure</option>
+              <option>Industrial / Energy</option>
+              <option>Strategic Partnership</option>
+              <option>Investor / Funding</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-field full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" maxlength="1200" required></textarea>
+          </div>
+
+          <div class="button-row form-actions">
+            <button class="button button-primary" type="submit">Request Technical Brief</button>
+            <a class="button button-secondary" href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Contact ArchoSystem</a>
+          </div>
+          <p class="form-note" id="form-note">Submitting opens your email client. If it does not open, email info@archosystem.com directly.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h2>ARCHOSYSTEM</h2>
+        <p>Deployable infrastructure controlled from start to finish.</p>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <a href="#platform-stack">System</a>
+        <a href="#problem">Problem</a>
+        <a href="#archoos">ArchoOS</a>
+        <a href="#archotank">ArchoTank</a>
+      </div>
+      <div>
+        <h3>Missions</h3>
+        <a href="#missions">Defense</a>
+        <a href="#missions">Disaster Response</a>
+        <a href="#missions">Municipal</a>
+        <a href="#missions">Industrial</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <a href="#contact">Request Brief</a>
+        <a href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Email</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 ArchoSystem, LLC. All rights reserved. Patent pending.</p>
+    </div>
+  </footer>
+</body>
+</html>
