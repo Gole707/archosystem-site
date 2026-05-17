@@ -3203,3 +3203,59 @@ body.reveal-enabled .hero .reveal {
     margin: 0.55in;
   }
 }
+
+
+/* Launch stability patch: mobile and form safety */
+@media (max-width: 820px) {
+  .site-nav {
+    max-height: calc(100svh - var(--header-height));
+    overflow-y: auto;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    min-height: auto;
+  }
+
+  .contact-grid,
+  .product-grid,
+  .two-column {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    padding-inline: 14px;
+  }
+
+  .brand span {
+    font-size: 0.98rem;
+  }
+
+  .container,
+  .hero .container {
+    width: min(100% - 28px, 1180px) !important;
+  }
+
+  .hero-copy h1,
+  .section-intro h2,
+  .centered h2,
+  .product-copy h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    min-width: 0;
+    width: 100%;
+  }
+}

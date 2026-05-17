@@ -2,8 +2,8 @@ const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const briefForm = document.querySelector("#brief-form");
-const contactEmail = "contact@archosystem.com";
-const briefSubject = "ArchoSystem Technical Brief Request";
+const contactEmail = "info@archosystem.com";
+const briefSubject = "ArchoSystem Brief Request";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const desktopNavQuery = window.matchMedia("(min-width: 821px)");
 

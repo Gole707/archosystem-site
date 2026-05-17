@@ -7,7 +7,7 @@
   <meta name="robots" content="index, follow">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="theme-color" content="#050607">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'nonce-YXJjaG9TeXN0ZW1BbmNob3I='; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self' mailto:; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
   <link rel="canonical" href="https://archosystem.com/">
   <meta property="og:title" content="ArchoSystem | Deployable Infrastructure">
   <meta property="og:description" content="ArchoSystem is a patent-pending deployable infrastructure platform for controlled formation, validation, and operation of infrastructure assets, starting with ArchoTank.">
@@ -152,7 +152,7 @@
       <a href="#archotank">ArchoTank</a>
       <a href="#missions">Missions</a>
       <a href="#contact">Contact</a>
-      <a class="nav-brief" href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Request Brief</a>
+      <a class="nav-brief" href="#contact">Request Brief</a>
     </nav>
   </header>
 
@@ -167,7 +167,7 @@
           <h1 id="hero-title"><span class="hero-title-line">Deployable Infrastructure.</span><br><span class="hero-title-line">Controlled From Start to Finish.</span></h1>
           <p class="lead">ArchoSystem packages, deploys, forms, validates, and tracks hardened infrastructure assets, starting with ArchoTank.</p>
           <div class="button-row">
-            <a class="button button-primary" href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Request Technical Brief</a>
+            <a class="button button-primary" href="#contact">Request Technical Brief</a>
             <a class="button button-secondary" href="#platform-stack">View System</a>
           </div>
         </div>
@@ -186,8 +186,8 @@
         <div class="section-intro wide">
           <span id="platform-stack" class="anchor-target" aria-hidden="true"></span>
           <p class="eyebrow">Platform Stack</p>
-          <h2 id="platform-stack-title">From demand to validated infrastructure.</h2>
-          <p>ArchoSystem turns infrastructure need into defined, packaged, formed, validated, and tracked physical assets through one controlled execution stack.</p>
+          <h2 id="platform-stack-title">ArchoTank is the first output. ArchoSystem is the platform.</h2>
+          <p>One platform connects control logic, execution units, formation, asset output, and validation records.</p>
         </div>
 
         <div class="card-grid five platform-stack">
@@ -336,7 +336,7 @@
         </div>
 
         <div class="button-row">
-          <a class="button button-primary" href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Request Technical Brief</a>
+          <a class="button button-primary" href="#contact">Request Technical Brief</a>
         </div>
       </div>
     </section>
@@ -351,7 +351,7 @@
           <p>Designed for water, wastewater, emergency storage, fuel-support, industrial containment, and future infrastructure applications, subject to project-specific engineering.</p>
           <div class="button-row">
             <a class="button button-dark" href="#missions">View Missions</a>
-            <a class="button button-light-outline" href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Request Technical Brief</a>
+            <a class="button button-light-outline" href="#contact">Request Technical Brief</a>
           </div>
         </div>
         <div class="product-image">
@@ -419,7 +419,7 @@
           <h2 id="status-title">Current Development Status</h2>
           <p>ArchoSystem is a patent-pending platform in prototype-development stage. Conceptual engineering review has been completed. Prototype validation partners, test sites, engineering collaborators, and mission-aligned funding pathways are being pursued. Project-specific engineering is required before deployment.</p>
           <div class="button-row">
-            <a class="button button-primary" href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Request Technical Brief</a>
+            <a class="button button-primary" href="#contact">Request Technical Brief</a>
           </div>
         </div>
 
@@ -458,7 +458,7 @@
           <p>All inquiries are reviewed for mission alignment.</p>
         </div>
 
-        <form class="contact-form" id="brief-form" action="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request" method="post" enctype="text/plain" accept-charset="UTF-8" aria-describedby="form-note">
+        <form class="contact-form" id="brief-form" aria-describedby="form-note">
           <div class="form-field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" maxlength="120" required>
@@ -525,7 +525,7 @@
       </div>
       <div>
         <h3>Contact</h3>
-        <a href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Request Brief</a>
+        <a href="#contact">Request Brief</a>
         <a href="mailto:info@archosystem.com?subject=ArchoSystem%20Brief%20Request">Email</a>
       </div>
     </div>
@@ -533,84 +533,5 @@
       <p>&copy; 2026 ArchoSystem, LLC. All rights reserved. Patent pending.</p>
     </div>
   </footer>
-  <script nonce="YXJjaG9TeXN0ZW1BbmNob3I=">
-    function scrollToTarget(hash) {
-      if (!hash || hash === "#") return;
-
-      if (hash === "#top") {
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-        return;
-      }
-
-      var target;
-      try {
-        target = document.querySelector(hash);
-      } catch (error) {
-        return;
-      }
-
-      if (!target) return;
-
-      var header = document.querySelector("header");
-      var headerHeight = header ? header.offsetHeight : 96;
-      var extraOffset = 36;
-      var targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - extraOffset;
-
-      window.scrollTo({
-        top: Math.max(targetTop, 0),
-        behavior: "smooth"
-      });
-    }
-
-    function closeAnchorNavigation() {
-      var siteNav = document.querySelector(".site-nav");
-      var menuToggle = document.querySelector(".menu-toggle");
-
-      document.body.classList.remove("nav-open");
-
-      if (siteNav) {
-        siteNav.classList.remove("is-open");
-      }
-
-      if (menuToggle) {
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Open navigation");
-      }
-    }
-
-    document.addEventListener("click", function (event) {
-      var link = event.target.closest && event.target.closest('a[href^="#"]');
-      if (!link) return;
-
-      var href = link.getAttribute("href");
-      if (!href || href === "#") return;
-
-      var target;
-      try {
-        target = document.querySelector(href);
-      } catch (error) {
-        return;
-      }
-
-      if (!target) return;
-
-      event.preventDefault();
-      event.stopImmediatePropagation();
-      closeAnchorNavigation();
-      scrollToTarget(href);
-      history.pushState(null, "", href);
-    }, true);
-
-    window.addEventListener("load", function () {
-      if (window.location.hash) {
-        setTimeout(function () {
-          scrollToTarget(window.location.hash);
-        }, 100);
-      }
-    });
-  </script>
 </body>
 </html>
