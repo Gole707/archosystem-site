@@ -1,18 +1,18 @@
 # Gate 1 — Strategy and Content Approval Packet
 
-**Status:** Founder-review candidate v1.0  
+**Status:** Approved and closed for active build  
 **Gate:** Strategy and content  
 **Scope:** Product narrative, public and private information architecture, terminology, claims, disclosure, revenue architecture, selector boundaries, and conversion goals
 
 ---
 
-## 1. Decision requested
+## 1. Approval record
 
-Approve this packet as the governing content baseline for the ArchoSystem rebuild.
+This packet is approved as the governing content baseline for the ArchoSystem rebuild.
 
-Approval closes the strategy portion of Gate 1 and authorizes the next work package: complete page copy, canonical visual design, image masters, and low-detail wireframes.
+Gate 1 is closed. The next active work package is Gate 2: canonical visual references, cinematic image masters, low-detail wireframes, and the shared design system.
 
-After approval, these items do not reopen during layout or responsive work unless a factual, legal, technical, security, accessibility, or material usability issue is found.
+These items do not reopen during layout or responsive work unless a factual, legal, technical, security, accessibility, or material usability issue is found.
 
 ---
 
@@ -326,19 +326,19 @@ It is not a final engineering design, quote, code review, certification tool, or
 
 ---
 
-## 11. Gate 1 exit criteria
+## 11. Gate 1 closure record
 
-Gate 1 is closed when:
+Gate 1 closed with approval of:
 
-- this narrative and hierarchy are approved;
-- the public and private sitemaps are approved;
-- the public/private/NDA disclosure boundary is approved;
-- terminology and prohibited claims are approved;
-- the revenue architecture is approved;
-- the Selector V1 boundary is approved;
-- complete plain-text public page copy is accepted;
-- investor page copy framework is accepted;
-- remaining factual verification items are documented without reopening strategy.
+- this narrative and hierarchy;
+- the public and private sitemaps;
+- the public/private/NDA disclosure boundary;
+- terminology and prohibited claims;
+- the revenue architecture;
+- the Selector V1 boundary;
+- the complete plain-text public page copy;
+- the investor page content framework;
+- the documented factual verification items that remain execution work.
 
 ---
 
