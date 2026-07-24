@@ -1,0 +1,48 @@
+# ArchoSystem Website Rebuild — Decision Ledger
+
+This ledger prevents settled strategy from being reopened during layout, image generation, responsive QA, or final polish.
+
+**Status meanings**
+
+- **Locked** — governs the active build.
+- **Open** — requires a decision before the relevant approval gate closes.
+- **Superseded** — retained for history but no longer controls the build.
+
+| ID | Decision | Status | Rationale | Reopen only if |
+|---|---|---|---|---|
+| D-001 | The current production site remains untouched until the new strategy, content, visuals, and wireframes pass their gates. | Locked | Protects the live site and separates planning from implementation. | A critical production defect requires an unrelated hotfix. |
+| D-002 | The public website leads with the physical ArchoTank product family before explaining ArchoOS or internal execution units. | Locked | The physical product is the clearest entry point for customers, partners, and first-time investors. | User testing shows the product cannot be understood without a different order. |
+| D-003 | ArchoSystem is the parent platform; ArchoTank is the first containment product family; ArchoOS is the control and evidence layer. | Locked | Preserves the full-stack company position without making software the public obstacle. | The product or corporate architecture materially changes. |
+| D-004 | “Drop-stitch” is not used as the public product identity. | Locked | The invention and market position are broader than one commercial construction method. | Patent counsel and product strategy explicitly approve a narrow branded use. |
+| D-005 | Public language describes a configurable spaced-wall structural containment system and its outcomes, not the complete internal recipe. | Locked | Protects disclosure discipline while remaining understandable. | A technical page is intentionally moved behind controlled access. |
+| D-006 | Full-height wall construction is the default public concept; four-foot rings are not a product limitation. | Locked | The four-foot approach was tied to concrete-placement risk, not the complete platform. | Testing or manufacturing proves sectional rings are superior for a specific product class. |
+| D-007 | Material widths and factory joining influence fabrication, but do not define the customer-facing height range. | Locked | Keeps marketing focused on engineered capacity and geometry. | Manufacturing constraints create a real standard product family. |
+| D-008 | The public site and private investor experience are separate information layers. | Locked | Public clarity and investor disclosure have different objectives. | The company intentionally publishes the full strategy. |
+| D-009 | Investor pages require real authentication or separate controlled deployment. An unlinked URL is not sufficient. | Locked | Market strategy, economics, and data-room content are confidential. | A legal and security review approves another access model. |
+| D-010 | The public launch uses a multi-page architecture rather than one oversized homepage. | Locked | Improves clarity, maintenance, and progressive disclosure. | Wireframes prove a smaller architecture is materially better. |
+| D-011 | The initial implementation preserves the current lightweight static technology approach. | Locked | The repository is simple, fast, and adequate for the public site and Selector V1. | Authentication, data, or application requirements justify a framework or backend. |
+| D-012 | Public launch sectors are emergency response, municipal water, wastewater, fire protection, agriculture, industrial liquids, and remote/defense logistics. | Locked | Covers strong use cases without publishing the entire expansion map. | A launch partner requires another sector or evidence is not ready for one listed sector. |
+| D-013 | The complete market atlas, sector economics, and platform expansion remain private. | Locked | These are part of the investment thesis and competitive strategy. | Leadership intentionally releases selected material. |
+| D-014 | Market sizing uses sector definition, relevant containment share, technical suitability, reachable buyers, unit assumptions, and installed-base revenue. | Locked | Avoids unsupported “percent of a giant market” projections. | A stronger validated methodology replaces it. |
+| D-015 | The business model includes initial systems, staged readiness inventory, replacement materials, accessories, aesthetic packages, ArchoOS, service, training, and refurbishment. | Locked | ArchoTank is an installed-base and readiness business, not a single hardware sale. | A revenue stream is removed after commercial validation. |
+| D-016 | Staged systems and replacement stock for military, emergency management, utilities, and response contractors are a core private commercial thesis. | Locked | Creates readiness contracts and recurring replenishment opportunities. | Target-customer research rejects the model. |
+| D-017 | The accessory shop is a formal product workstream. | Locked | Ladders, platforms, brackets, vents, ports, supports, skids, and deployment equipment add revenue and control critical interfaces. | A partner model proves more efficient for all accessories. |
+| D-018 | Replaceable aesthetic and identity skins are an optional revenue package. | Locked | Printing, logos, camouflage, high-visibility, low-visibility, and architectural finishes can add margin without changing the structural assembly. | Material or regulatory testing makes a specific finish unsuitable. |
+| D-019 | Selector V1 is a transparent calculator and rules engine, not a final design, quote, code check, or AI advisor. | Locked | Keeps launch scope controlled and claims honest. | V1 is complete and a later version is formally approved. |
+| D-020 | Capacity examples are nominal geometric volumes and must explain freeboard and working capacity. | Locked | Prevents misleading gallon claims. | A certified product schedule replaces examples. |
+| D-021 | Million-gallon configurations may be shown as calculated engineered possibilities, not as currently validated products. | Locked | Communicates scale without claiming completed testing. | A validated configuration becomes available. |
+| D-022 | Content and claims are approved before visual polish. | Locked | Prevents repeated redesign caused by changing strategy during implementation. | A factual correction is discovered. |
+| D-023 | The build has three approval gates: strategy/content, visual/wireframe, and working-site/final. | Locked | Reduces constant micro-approval and rework. | A legal or engineering review adds a mandatory gate. |
+| D-024 | Each gate receives no more than two planned revision rounds. | Locked | Establishes a stopping rule. | A material factual, technical, legal, accessibility, security, or usability problem remains. |
+| D-025 | One design system governs all public and private pages. | Locked | Prevents page-by-page visual reinvention. | A private data tool has a documented functional need for another pattern. |
+| D-026 | One canonical ArchoTank visual language is approved before cinematic image production. | Locked | Prevents inconsistent AI-generated products. | Engineering changes the product form. |
+| D-027 | Public and investor images may be cinematic, but must stay physically believable and must not imply untested certification or performance. | Locked | Spectacle must survive scrutiny. | New test evidence supports a stronger depiction. |
+| D-028 | Concept images are labeled where the context could otherwise imply an installed or certified product. | Locked | Maintains trust. | The image is replaced by a verified photograph. |
+| D-029 | Public claims do not use absolute “stores anything,” “any climate,” “bulletproof,” “blast-proof,” “zero maintenance,” or similar language without qualifying evidence. | Locked | Real products use compatibility tables, operating envelopes, and tested threat definitions. | Evidence and legal review support exact wording. |
+| D-030 | Hardened, ballistic, fragment, and blast language is configuration- and test-specific. | Locked | Material names alone do not establish system performance. | Relevant system-level testing is completed. |
+| D-031 | Current internal market reports are research inputs, not automatically publishable evidence. | Locked | Several existing reports contain speculative or weakly supported claims. | Each claim is individually revalidated. |
+| D-032 | New ideas after a gate closes go to a later-version parking lot instead of entering the active build. | Locked | Protects momentum and launch scope. | The idea is required for correctness, safety, legal compliance, or conversion. |
+| D-033 | The founder approves strategy, disclosure, claims, visual direction, and launch, but does not manually tune production CSS. | Locked | Keeps founder attention on high-value decisions and prevents endless pixel iteration. | Emergency maintenance requires direct intervention. |
+| D-034 | QA is centered on 1440, 1024, 768, and 390 pixel target widths with fluid behavior between them. | Locked | Provides practical coverage without device-by-device obsession. | Analytics identify a material unsupported device class. |
+| D-035 | After launch, the site is frozen except for genuine defects and evidence-driven changes. | Locked | Prevents immediate return to subjective tinkering. | A critical issue or validated user feedback requires a change. |
+| D-036 | The exact public hero line is not locked in the planning blueprint. It will be selected during the content gate from approved claims and terminology. | Locked | Avoids turning a temporary slogan into product strategy. | Content gate closes with approved final copy. |
