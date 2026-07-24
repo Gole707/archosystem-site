@@ -6,23 +6,26 @@ The current production website remains unchanged. This planning package exists t
 
 ## Reading order
 
-1. [Gate 1 Approval Packet](./GATE_1_APPROVAL_PACKET.md)
-2. [Public Website Copy v1](./PUBLIC_SITE_COPY_V1.md)
-3. [Investor Portal Content v1](./INVESTOR_PORTAL_CONTENT_V1.md)
-4. [Master Blueprint](./MASTER_BLUEPRINT.md)
-5. [Locked Decisions](./DECISIONS.md)
-6. [Claims Ledger](./CLAIMS_LEDGER.md)
-7. [Terminology and Disclosure Rules](./TERMINOLOGY_DISCLOSURE.md)
-8. [Visual System and Shot List](./VISUAL_SYSTEM_AND_SHOT_LIST.md)
-9. [ArchoTank Selector V1 Specification](./SELECTOR_V1_SPEC.md)
-10. [Investor Sector Card Template](./INVESTOR_SECTOR_CARD_TEMPLATE.md)
-11. [Build Workflow](./BUILD_WORKFLOW.md)
+1. [Gate Status](./GATE_STATUS.md)
+2. [Gate 1 Approval Packet](./GATE_1_APPROVAL_PACKET.md)
+3. [Public Website Copy v1](./PUBLIC_SITE_COPY_V1.md)
+4. [Investor Portal Content v1](./INVESTOR_PORTAL_CONTENT_V1.md)
+5. [Master Blueprint](./MASTER_BLUEPRINT.md)
+6. [Locked Decisions](./DECISIONS.md)
+7. [Claims Ledger](./CLAIMS_LEDGER.md)
+8. [Terminology and Disclosure Rules](./TERMINOLOGY_DISCLOSURE.md)
+9. [Canonical Product Visual Bible](./CANONICAL_PRODUCT_VISUAL_BIBLE.md)
+10. [Visual System and Shot List](./VISUAL_SYSTEM_AND_SHOT_LIST.md)
+11. [Wireframe Specification v1](./WIREFRAME_SPEC_V1.md)
+12. [ArchoTank Selector V1 Specification](./SELECTOR_V1_SPEC.md)
+13. [Investor Sector Card Template](./INVESTOR_SECTOR_CARD_TEMPLATE.md)
+14. [Build Workflow](./BUILD_WORKFLOW.md)
 
 ## Current gate
 
-**Gate 1 — Strategy and content**
+**Gate 2 — Canonical product, cinematic references, wireframes, and design system**
 
-The current review package locks:
+Gate 1 is closed for the active build. It locked:
 
 - public product hierarchy and hero positioning;
 - public and private sitemaps;
@@ -34,7 +37,15 @@ The current review package locks:
 - Opportunity Atlas structure;
 - Selector V1 boundaries.
 
-The live homepage, production styles, scripts, and assets remain unchanged until Gate 1 and the later visual/wireframe gate close.
+Gate 2 now locks:
+
+- one canonical ArchoTank silhouette and detail family;
+- rapid/reusable, permanent, hardened, identity-skin, and scale reference sets;
+- public and investor page wireframes;
+- component reuse and responsive ordering;
+- cinematic shot assignments and crop families.
+
+The live homepage, production styles, scripts, and assets remain unchanged until Gate 2 closes.
 
 ## Governing rules
 
