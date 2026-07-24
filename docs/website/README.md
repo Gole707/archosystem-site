@@ -6,14 +6,35 @@ The current production website remains unchanged. This planning package exists t
 
 ## Reading order
 
-1. [Master Blueprint](./MASTER_BLUEPRINT.md)
-2. [Locked Decisions](./DECISIONS.md)
-3. [Claims Ledger](./CLAIMS_LEDGER.md)
-4. [Terminology and Disclosure Rules](./TERMINOLOGY_DISCLOSURE.md)
-5. [Visual System and Shot List](./VISUAL_SYSTEM_AND_SHOT_LIST.md)
-6. [ArchoTank Selector V1 Specification](./SELECTOR_V1_SPEC.md)
-7. [Investor Sector Card Template](./INVESTOR_SECTOR_CARD_TEMPLATE.md)
-8. [Build Workflow](./BUILD_WORKFLOW.md)
+1. [Gate 1 Approval Packet](./GATE_1_APPROVAL_PACKET.md)
+2. [Public Website Copy v1](./PUBLIC_SITE_COPY_V1.md)
+3. [Investor Portal Content v1](./INVESTOR_PORTAL_CONTENT_V1.md)
+4. [Master Blueprint](./MASTER_BLUEPRINT.md)
+5. [Locked Decisions](./DECISIONS.md)
+6. [Claims Ledger](./CLAIMS_LEDGER.md)
+7. [Terminology and Disclosure Rules](./TERMINOLOGY_DISCLOSURE.md)
+8. [Visual System and Shot List](./VISUAL_SYSTEM_AND_SHOT_LIST.md)
+9. [ArchoTank Selector V1 Specification](./SELECTOR_V1_SPEC.md)
+10. [Investor Sector Card Template](./INVESTOR_SECTOR_CARD_TEMPLATE.md)
+11. [Build Workflow](./BUILD_WORKFLOW.md)
+
+## Current gate
+
+**Gate 1 — Strategy and content**
+
+The current review package locks:
+
+- public product hierarchy and hero positioning;
+- public and private sitemaps;
+- public calls to action;
+- terminology and disclosure boundaries;
+- claims posture;
+- complete public plain-text copy;
+- investor narrative and revenue architecture;
+- Opportunity Atlas structure;
+- Selector V1 boundaries.
+
+The live homepage, production styles, scripts, and assets remain unchanged until Gate 1 and the later visual/wireframe gate close.
 
 ## Governing rules
 
