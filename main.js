@@ -8,7 +8,9 @@ const pressureOutput=document.querySelector('#pressure-output');
 const targetOutput=document.querySelector('#target-output');
 const heightOutput=document.querySelector('#height-output');
 const briefForm=document.querySelector('#brief-form');
-const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const familyButtons=document.querySelectorAll('.requirement-button');
+const familyOutput=document.querySelector('#family-output');
+const familyDescription=document.querySelector('#family-description');
 
 function closeNav(){
   if(!menuToggle||!siteNav)return;
@@ -35,6 +37,23 @@ if(menuToggle&&siteNav){
     closeNav();
   });
 }
+
+const familyCopy={
+  Rapid:'Temporary and reusable storage configured for compact transport, rapid deployment, recovery, and staged readiness.',
+  Fire:'Dedicated fire-water reserve configured around required capacity, flow interfaces, access, monitoring, climate, and site conditions.',
+  Process:'Containment configured for equalization, bypass, process holding, mixing, temporary treatment, and rehabilitation support.',
+  Storage:'Project-specific liquid storage configured by contents, capacity, operating duration, site, protection, and lifecycle requirements.',
+  Permanent:'Long-duration infrastructure with developed foundations, permanent process connections, durable exterior systems, and cementitious pathways.'
+};
+
+familyButtons.forEach(button=>{
+  button.addEventListener('click',()=>{
+    const family=button.dataset.family;
+    familyButtons.forEach(item=>item.classList.toggle('is-active',item===button));
+    if(familyOutput)familyOutput.textContent=`ArchoTank ${family}`;
+    if(familyDescription)familyDescription.textContent=familyCopy[family]||'';
+  });
+});
 
 function updateSelector(){
   if(!capacityInput||!heightInput||!diameterOutput||!pressureOutput)return;
@@ -66,23 +85,8 @@ if(briefForm){
   briefForm.addEventListener('submit',event=>{
     event.preventDefault();
     const data=new FormData(briefForm);
-    const subject=`ArchoSystem — ${data.get('conversation')||'Website inquiry'}`;
+    const subject=`ArchoSystem — ${data.get('conversation')||'Project inquiry'}`;
     const body=[`Name: ${data.get('name')||''}`,`Email: ${data.get('email')||''}`,`Organization: ${data.get('organization')||''}`,`Conversation: ${data.get('conversation')||''}`,'',String(data.get('brief')||'')].join('\n');
     window.location.href=`mailto:info@archosystem.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
-}
-
-const reveals=document.querySelectorAll('.reveal');
-if(reduceMotion||!('IntersectionObserver'in window)){
-  reveals.forEach(el=>el.classList.add('is-visible'));
-}else{
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-      if(entry.isIntersecting){
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  },{threshold:.12,rootMargin:'0px 0px -40px'});
-  reveals.forEach(el=>observer.observe(el));
 }
