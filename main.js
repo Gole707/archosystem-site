@@ -1,356 +1,92 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const siteNav = document.querySelector(".site-nav");
-const navLinks = document.querySelectorAll(".site-nav a");
-const briefForm = document.querySelector("#brief-form");
-const contactEmail = "info@archosystem.com";
-const briefSubject = "ArchoSystem Brief Request";
-const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const desktopNavQuery = window.matchMedia("(min-width: 821px)");
+const menuToggle=document.querySelector('.menu-toggle');
+const siteNav=document.querySelector('.site-nav');
+const navLinks=document.querySelectorAll('.site-nav a');
+const capacityInput=document.querySelector('#capacity-input');
+const heightInput=document.querySelector('#height-input');
+const diameterOutput=document.querySelector('#diameter-output');
+const pressureOutput=document.querySelector('#pressure-output');
+const targetOutput=document.querySelector('#target-output');
+const heightOutput=document.querySelector('#height-output');
+const briefForm=document.querySelector('#brief-form');
+const familyButtons=document.querySelectorAll('.requirement-button');
+const familyOutput=document.querySelector('#family-output');
+const familyDescription=document.querySelector('#family-description');
 
-const closeMobileNav = () => {
-  if (!menuToggle || !siteNav) return;
+function closeNav(){
+  if(!menuToggle||!siteNav)return;
+  siteNav.classList.remove('is-open');
+  document.body.classList.remove('nav-open');
+  menuToggle.setAttribute('aria-expanded','false');
+  menuToggle.setAttribute('aria-label','Open navigation');
+}
 
-  siteNav.classList.remove("is-open");
-  document.body.classList.remove("nav-open");
-  menuToggle.setAttribute("aria-expanded", "false");
-  menuToggle.setAttribute("aria-label", "Open navigation");
-};
-
-const resolveCssLength = (value, fallback = 0) => {
-  const trimmedValue = value.trim();
-  const directValue = parseFloat(trimmedValue);
-
-  if (Number.isFinite(directValue) && /^-?\d/.test(trimmedValue)) {
-    return directValue;
-  }
-
-  const probe = document.createElement("div");
-  probe.style.position = "absolute";
-  probe.style.visibility = "hidden";
-  probe.style.pointerEvents = "none";
-  probe.style.height = trimmedValue;
-  document.body.append(probe);
-
-  const resolvedValue = probe.getBoundingClientRect().height;
-  probe.remove();
-
-  return resolvedValue || fallback;
-};
-
-const getAnchorOffset = () => {
-  const value = getComputedStyle(document.documentElement).getPropertyValue("--anchor-offset");
-  return resolveCssLength(value, 112);
-};
-
-const getScrollTarget = (target) => {
-  if (!target) return null;
-  const section = target.closest?.(".section, .site-footer");
-
-  if (!section) return target;
-
-  return Array.from(section.children).find((child) => child.classList.contains("container")) || section;
-};
-
-const getScrollTop = (scrollTarget) => {
-  return scrollTarget.getBoundingClientRect().top + window.scrollY - getAnchorOffset();
-};
-
-const addRevealClass = (element, delayIndex = 0) => {
-  if (!element) return;
-
-  element.classList.add("reveal");
-  if (delayIndex > 0) {
-    element.classList.add(`reveal-delay-${Math.min(delayIndex, 3)}`);
-  }
-};
-
-const prepareRevealElements = () => {
-  const primaryRevealSelectors = [
-    ".hero-copy",
-    ".hero-visual",
-    ".trust-strip",
-    ".comparison",
-    ".lifecycle-nodes",
-    ".product-image",
-    ".contact-form",
-    ".footer-grid"
-  ];
-
-  document.querySelectorAll(primaryRevealSelectors.join(", ")).forEach((element, index) => {
-    addRevealClass(element, index % 2);
+if(menuToggle&&siteNav){
+  menuToggle.addEventListener('click',()=>{
+    const open=!siteNav.classList.contains('is-open');
+    siteNav.classList.toggle('is-open',open);
+    document.body.classList.toggle('nav-open',open);
+    menuToggle.setAttribute('aria-expanded',String(open));
+    menuToggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
   });
-
-  document.querySelectorAll(".stacked-cards, .card-grid, .step-cards, .status-grid").forEach((group) => {
-    Array.from(group.children).forEach((element, index) => {
-      addRevealClass(element, index % 4);
-    });
-  });
-};
-
-const revealVisibleElements = (snap = false) => {
-  document.querySelectorAll(".reveal").forEach((element) => {
-    const rect = element.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      if (snap) {
-        element.style.transition = "none";
-      }
-      element.classList.add("is-visible");
-      if (snap) {
-        window.requestAnimationFrame(() => {
-          element.style.transition = "";
-        });
-      }
-    }
-  });
-};
-
-const scrollToAnchor = (target, behavior = reduceMotion.matches ? "auto" : "smooth") => {
-  if (!target) return;
-
-  const targetId = target.id;
-
-  if (targetId === "top") {
-    if (behavior === "instant") {
-      window.scrollTo(0, 0);
-    } else {
-      window.scrollTo({
-        top: 0,
-        behavior
-      });
-    }
-    setActiveNavLink("top");
-    return;
-  }
-
-  const scrollTarget = getScrollTarget(target);
-  const top = getScrollTop(scrollTarget);
-
-  if (behavior === "instant") {
-    window.scrollTo(0, Math.max(0, top));
-    revealVisibleElements(true);
-    return;
-  }
-
-  window.scrollTo({
-    top: Math.max(0, top),
-    behavior,
-  });
-};
-
-const updateHash = (hash) => {
-  if (!hash) return;
-
-  if (window.location.hash !== hash) {
-    window.history.pushState(null, "", hash);
-  }
-};
-
-const revealOnScroll = () => {
-  const revealElements = document.querySelectorAll(".reveal");
-
-  if (reduceMotion.matches || !("IntersectionObserver" in window)) {
-    revealElements.forEach((element) => element.classList.add("is-visible"));
-    return;
-  }
-
-  document.body.classList.add("reveal-enabled");
-
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-
-      entry.target.classList.add("is-visible");
-      observer.unobserve(entry.target);
-    });
-  }, {
-    rootMargin: "0px 0px -12% 0px",
-    threshold: 0.14
-  });
-
-  revealElements.forEach((element) => {
-    if (element.getBoundingClientRect().top < window.innerHeight) {
-      element.classList.add("is-visible");
-      return;
-    }
-
-    revealObserver.observe(element);
-  });
-};
-
-const setActiveNavLink = (sectionId) => {
-  navLinks.forEach((link) => {
-    const href = link.getAttribute("href");
-    link.classList.toggle("is-active", href === `#${sectionId}`);
-  });
-
-  document.querySelectorAll(".section, .hero, .site-footer").forEach((section) => {
-    const id = section.dataset.sectionId || section.id;
-    section.classList.toggle("is-section-active", id === sectionId);
-  });
-};
-
-const trackActiveSections = () => {
-  const trackedLinks = Array.from(navLinks).filter((link) => {
-    const href = link.getAttribute("href");
-    return href && href.startsWith("#") && document.querySelector(href);
-  });
-
-  if (!trackedLinks.length) return;
-
-  const sections = Array.from(new Set(trackedLinks.map((link) => {
-    const anchor = document.querySelector(link.getAttribute("href"));
-    return anchor.closest(".section, .hero, .site-footer") || anchor;
-  })));
-
-  if ("IntersectionObserver" in window) {
-    const clearActiveAtTop = () => {
-      if (window.scrollY < 40) {
-        setActiveNavLink("top");
-      }
-    };
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      if (window.scrollY < 40) {
-        setActiveNavLink("top");
-        return;
-      }
-
-      const visibleEntries = entries
-        .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-
-      if (!visibleEntries.length) return;
-
-      const activeSection = visibleEntries[0].target;
-      setActiveNavLink(activeSection.dataset.sectionId || activeSection.id);
-    }, {
-      rootMargin: "-25% 0px -60% 0px",
-      threshold: 0.01
-    });
-
-    sections.forEach((section) => sectionObserver.observe(section));
-    window.addEventListener("scroll", clearActiveAtTop, { passive: true });
-    window.addEventListener("resize", clearActiveAtTop);
-    clearActiveAtTop();
-    return;
-  }
-
-  const updateActiveFromScroll = () => {
-    const marker = window.scrollY + window.innerHeight * 0.28;
-    let activeSection = sections[0];
-
-    sections.forEach((section) => {
-      if (section.offsetTop <= marker) {
-        activeSection = section;
-      }
-    });
-
-    setActiveNavLink(activeSection.dataset.sectionId || activeSection.id);
-  };
-
-  window.addEventListener("scroll", updateActiveFromScroll, { passive: true });
-  window.addEventListener("resize", updateActiveFromScroll);
-  updateActiveFromScroll();
-};
-
-if (menuToggle && siteNav) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("is-open");
-    document.body.classList.toggle("nav-open", isOpen);
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+  navLinks.forEach(link=>link.addEventListener('click',closeNav));
+  window.addEventListener('resize',()=>{if(window.innerWidth>820)closeNav()});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeNav()});
+  document.addEventListener('click',event=>{
+    if(!siteNav.classList.contains('is-open'))return;
+    if(siteNav.contains(event.target)||menuToggle.contains(event.target))return;
+    closeNav();
   });
 }
 
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    closeMobileNav();
-  }
-});
-
-document.addEventListener("click", (event) => {
-  if (!menuToggle || !siteNav || !siteNav.classList.contains("is-open")) return;
-
-  const clickedToggle = menuToggle.contains(event.target);
-  const clickedNav = siteNav.contains(event.target);
-
-  if (!clickedToggle && !clickedNav) {
-    closeMobileNav();
-  }
-});
-
-const closeNavOnDesktop = (event) => {
-  if (event.matches) {
-    closeMobileNav();
-  }
+const familyCopy={
+  Rapid:'A temporary-storage development pathway organized around compact transport, deployment planning, recovery, and staged readiness.',
+  Fire:'A fire-water development pathway organized around reserve capacity, flow interfaces, access, monitoring, climate, and site conditions.',
+  Process:'A process-containment development pathway for equalization, bypass, holding, mixing, temporary treatment, and rehabilitation support.',
+  Storage:'A liquid-storage development pathway organized by contents, capacity, duration, site, protection, and lifecycle requirements.',
+  Permanent:'A long-duration development pathway requiring project-specific foundations, permanent interfaces, exterior systems, engineering, and validation.'
 };
 
-if (desktopNavQuery.addEventListener) {
-  desktopNavQuery.addEventListener("change", closeNavOnDesktop);
-} else if (desktopNavQuery.addListener) {
-  desktopNavQuery.addListener(closeNavOnDesktop);
-}
-
-document.addEventListener("click", (event) => {
-  const link = event.target.closest('a[href^="#"]');
-  if (!link) return;
-
-  const url = new URL(link.getAttribute("href"), window.location.href);
-  const isSamePage = url.origin === window.location.origin
-    && url.pathname === window.location.pathname
-    && url.search === window.location.search;
-
-  if (!isSamePage || !url.hash || url.hash === "#") return;
-
-  const target = document.querySelector(url.hash);
-  if (!target) return;
-
-  event.preventDefault();
-  closeMobileNav();
-  scrollToAnchor(target);
-  updateHash(url.hash);
+familyButtons.forEach(button=>{
+  button.addEventListener('click',()=>{
+    const family=button.dataset.family;
+    familyButtons.forEach(item=>item.classList.toggle('is-active',item===button));
+    if(familyOutput)familyOutput.textContent=`ArchoTank ${family}`;
+    if(familyDescription)familyDescription.textContent=familyCopy[family]||'';
+  });
 });
 
-prepareRevealElements();
-revealOnScroll();
-trackActiveSections();
-
-const scrollToInitialHash = () => {
-  if (!window.location.hash) return;
-
-  const target = document.querySelector(window.location.hash);
-  if (target) {
-    scrollToAnchor(target, "instant");
-    window.requestAnimationFrame(() => revealVisibleElements(true));
-  }
-};
-
-if (window.location.hash) {
-  window.requestAnimationFrame(scrollToInitialHash);
-  window.addEventListener("load", scrollToInitialHash, { once: true });
+function updateSelector(){
+  if(!capacityInput||!heightInput||!diameterOutput||!pressureOutput)return;
+  const min=Number(capacityInput.min)||1000;
+  const max=Number(capacityInput.max)||2000000;
+  const gallons=Math.min(max,Math.max(min,Number(capacityInput.value)||min));
+  const height=Math.max(1,Number(heightInput.value)||1);
+  const cubicFeet=gallons/7.48052;
+  const diameter=Math.sqrt((4*cubicFeet)/(Math.PI*height));
+  const psi=height*.433;
+  diameterOutput.textContent=`${Math.ceil(diameter)} ft`;
+  pressureOutput.textContent=`Water-equivalent pressure at full wall height: ${psi.toFixed(1)} psi`;
+  if(targetOutput)targetOutput.textContent=`Target: ${Math.round(gallons).toLocaleString('en-US')} gal`;
+  if(heightOutput)heightOutput.textContent=`Wall height: ${height} ft`;
 }
 
-if (briefForm) {
-  briefForm.addEventListener("submit", (event) => {
+capacityInput?.addEventListener('input',updateSelector);
+heightInput?.addEventListener('change',updateSelector);
+capacityInput?.addEventListener('blur',()=>{
+  const min=Number(capacityInput.min)||1000;
+  const max=Number(capacityInput.max)||2000000;
+  const value=Math.min(max,Math.max(min,Number(capacityInput.value)||min));
+  capacityInput.value=String(value);
+  updateSelector();
+});
+updateSelector();
+
+if(briefForm){
+  briefForm.addEventListener('submit',event=>{
     event.preventDefault();
-
-    if (!briefForm.checkValidity()) {
-      briefForm.reportValidity();
-      return;
-    }
-
-    const formData = new FormData(briefForm);
-    const clean = (fieldName) => String(formData.get(fieldName) || "").trim();
-    const messageLines = [
-      `Name: ${clean("name")}`,
-      `Organization: ${clean("organization")}`,
-      `Email: ${clean("email")}`,
-      `Interest Type: ${clean("interest")}`,
-      "",
-      `${clean("message")}`
-    ];
-
-    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(briefSubject)}&body=${encodeURIComponent(messageLines.join("\n"))}`;
-    window.location.assign(mailto);
+    const data=new FormData(briefForm);
+    const subject=`ArchoSystem — ${data.get('conversation')||'Project inquiry'}`;
+    const body=[`Name: ${data.get('name')||''}`,`Email: ${data.get('email')||''}`,`Organization: ${data.get('organization')||''}`,`Conversation: ${data.get('conversation')||''}`,'',String(data.get('brief')||'')].join('\n');
+    window.location.href=`mailto:info@archosystem.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 }
