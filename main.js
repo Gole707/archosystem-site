@@ -1,9 +1,6 @@
 const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
-const briefForm = document.querySelector("#brief-form");
-const contactEmail = "info@archosystem.com";
-const briefSubject = "ArchoSystem Brief Request";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const desktopNavQuery = window.matchMedia("(min-width: 821px)");
 
@@ -294,6 +291,7 @@ if (desktopNavQuery.addEventListener) {
 document.addEventListener("click", (event) => {
   const link = event.target.closest('a[href^="#"]');
   if (!link) return;
+  if (link.classList.contains("skip-link")) return;
 
   const url = new URL(link.getAttribute("href"), window.location.href);
   const isSamePage = url.origin === window.location.origin
@@ -330,27 +328,3 @@ if (window.location.hash) {
   window.addEventListener("load", scrollToInitialHash, { once: true });
 }
 
-if (briefForm) {
-  briefForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    if (!briefForm.checkValidity()) {
-      briefForm.reportValidity();
-      return;
-    }
-
-    const formData = new FormData(briefForm);
-    const clean = (fieldName) => String(formData.get(fieldName) || "").trim();
-    const messageLines = [
-      `Name: ${clean("name")}`,
-      `Organization: ${clean("organization")}`,
-      `Email: ${clean("email")}`,
-      `Interest Type: ${clean("interest")}`,
-      "",
-      `${clean("message")}`
-    ];
-
-    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(briefSubject)}&body=${encodeURIComponent(messageLines.join("\n"))}`;
-    window.location.assign(mailto);
-  });
-}

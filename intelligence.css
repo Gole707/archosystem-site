@@ -1,0 +1,56 @@
+/* Bounded additions to the existing ArchoSystem visual system. */
+.skip-link { position: fixed; z-index: 2000; top: 10px; left: 16px; padding: 12px 20px; background: #f4f7fb; color: #050607; transform: translateY(-160%); }
+.skip-link:focus { transform: translateY(0); }
+.intelligence-section { background: radial-gradient(ellipse at 86% 30%, rgba(49, 80, 111, .13), transparent 60%), #080c11; }
+.intelligence-layout { display: grid; grid-template-columns: minmax(0, .87fr) minmax(0, 1.13fr); gap: clamp(32px, 4vw, 72px); align-items: center; }
+.intelligence-layout > * { min-width: 0; }
+.intelligence-copy h2 { font-size: clamp(2rem, 3.4vw, 3.8rem); font-weight: 430; line-height: 1.12; }
+.intelligence-copy > p:not(.eyebrow) { max-width: 630px; }
+.intelligence-lead { color: #e7edf3; font-size: 1.13rem; }
+.intelligence-capabilities { margin: 28px 0 22px; }
+.intelligence-capabilities > div { display: grid; grid-template-columns: 135px minmax(0, 1fr); gap: 16px; padding: 13px 0; border-top: 1px solid rgba(168, 179, 194, .15); }
+.intelligence-capabilities dt { color: #e7edf3; font-size: .84rem; font-weight: 650; }
+.intelligence-capabilities dd { margin: 0; color: #a8b3c2; font-size: .86rem; line-height: 1.6; }
+.intelligence-copy .intelligence-status { color: #a8b3c2; font-size: .78rem; line-height: 1.65; border-left: 2px solid #d9822b; padding-left: 13px; }
+.intelligence-text-link { display: inline-flex; gap: 10px; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(168, 179, 194, .4); color: #f4f7fb; font-size: .87rem; }
+.intelligence-text-link:hover { border-color: #d9822b; }
+.intelligence-text-link:focus-visible, .intelligence-visual a:focus-visible { outline: 2px solid #d9822b; outline-offset: 5px; }
+.intelligence-visual { margin: 0; }
+.intelligence-visual a { display: block; position: relative; border: 1px solid #343e4a; background: #040609; box-shadow: 0 28px 75px rgba(0, 0, 0, .4); }
+.intelligence-visual img { display: block; width: 100%; height: auto; }
+.intelligence-image-label { display: block; padding: 16px 18px; border-top: 1px solid #2a313a; color: #bfc9d5; font-size: .65rem; letter-spacing: .13em; line-height: 1.7; }
+.intelligence-visual figcaption { margin: 13px 0 0; color: #a8b3c2; font-size: .73rem; line-height: 1.65; }
+.founder-section { background: #0c1015; }
+.founder-layout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 72px; align-items: start; }
+.founder-layout h2 { font-size: clamp(1.8rem, 2.8vw, 3rem); font-weight: 430; line-height: 1.15; }
+.founder-name { color: #e7edf3; font-weight: 650; }
+.inquiry-preview { grid-column: 1 / -1; padding: 24px; border: 1px solid #465262; background: #0b1017; }
+.inquiry-preview[hidden] { display: none; }
+.inquiry-preview .inquiry-status { color: #dbe5ef; font-size: .88rem; }
+.inquiry-preview textarea { min-height: 210px; margin-top: 10px; white-space: pre-wrap; }
+.inquiry-preview .button-row { margin-top: 16px; }
+.inquiry-preview .button { min-width: 0; }
+@media (max-width: 1100px) {
+  .intelligence-layout { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .intelligence-copy { max-width: 760px; }
+  .intelligence-visual { max-width: 1000px; }
+}
+@media (max-width: 820px) {
+  .founder-layout { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .hero-title-line { white-space: normal; }
+}
+@media (max-width: 620px) {
+  .intelligence-capabilities > div { grid-template-columns: minmax(0, 1fr); gap: 5px; }
+  .intelligence-layout { gap: 28px; }
+  .intelligence-copy .button-row { gap: 18px; }
+  .intelligence-copy .button { width: 100%; }
+  .intelligence-copy .intelligence-text-link { justify-content: center; margin-inline: auto; }
+  .intelligence-image-label { padding: 12px; font-size: .6rem; letter-spacing: .06em; }
+  .inquiry-preview { padding: 16px; }
+}
+@media print {
+  .skip-link, .inquiry-preview { display: none; }
+  .intelligence-layout, .founder-layout { display: block; }
+  .intelligence-copy p, .intelligence-capabilities dt, .intelligence-capabilities dd, .intelligence-visual figcaption, .founder-layout p { color: #111; }
+  .intelligence-visual { max-width: 700px; margin-top: 20px; }
+}
