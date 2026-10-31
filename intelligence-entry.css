@@ -1,0 +1,31 @@
+/* Loaded only by /intelligence/. Keep shared page styles unchanged. */
+@media (min-width: 821px) {
+  body[data-route="/intelligence/"] .ai-public .arrival {
+    padding-top: clamp(28px, 4.8svh, 48px);
+    padding-bottom: 24px;
+    gap: 24px;
+  }
+
+  body[data-route="/intelligence/"] .ai-public .arrival-copy {
+    padding-bottom: 12px;
+  }
+
+  body[data-route="/intelligence/"] .ai-public .arrival h1 {
+    font-size: clamp(48px, min(5.8vw, 10svh), 96px);
+    margin-top: 20px;
+  }
+
+  body[data-route="/intelligence/"] .ai-public .arrival .promise {
+    font-size: clamp(18px, min(1.5vw, 2.7svh), 26px);
+    max-width: 38ch;
+    margin-top: 22px;
+  }
+
+  body[data-route="/intelligence/"] .ai-public .arrival .button {
+    margin-top: 24px;
+  }
+
+  body[data-route="/intelligence/"] .ai-public .arrival .portal {
+    min-height: clamp(112px, 16.5svh, 156px);
+  }
+}
