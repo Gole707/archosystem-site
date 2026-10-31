@@ -1,0 +1,45 @@
+CURRENT WEBSITE ENTRANCE — 30 OCTOBER 2026
+The opening uses earth-horizon-20261030.webp, generated illustrative orbital artwork based on user-supplied visual references. It is not a satellite observation, real-time view, or geographic layer. Slow camera movement is a presentation effect. The original globe implementation is retained in source but is not mounted in this entrance. Existing dated app screenshots remain unchanged.
+
+CURRENT REVIEW REFINEMENT — 29 OCTOBER 2026
+
+The native WebGL globe remains available, now with high-precision fragment arithmetic and a drawing-buffer ceiling of2304px, up to2 device pixels per CSS pixel. Local historical NASA surface and example cloud sources below remain unchanged. WebGL output needs a GPU-capable browser for qualification.
+
+When WebGL cannot start, the sharp approved earth-cinematic.webp illustration appears with subtle90-second camera movement. It is a generated illustrative Earth composition, not an observed geographic layer or a physically rotating sphere. This replaces the visibly enlarged768px software-rendered fallback. No CPU sphere is run. Pause, reduced-motion, offscreen/hidden suspension and cleanup apply to the cinematic presentation too. Context loss retains sharp static artwork.
+
+The initial poster appears before the renderer is ready. Source assets are preserved. The display contains no live weather or telemetry. Current browser results are recorded in the refinement handoff.
+
+HISTORICAL TEXTURE PROVENANCE AND EARLIER REVIEW BELOW
+(The old fallback dimensions and old test frames below describe the earlier release, not the current fallback.)
+
+ARCHO EARTH HERO - IMAGERY AND RENDERING
+
+Earth surface
+NASA Earth Observatory, Blue Marble: Next Generation, July 2004 base map.
+Produced by Reto Stockli, NASA Goddard Space Flight Center.
+Original collection: https://science.nasa.gov/earth/earth-observatory/blue-marble-next-generation/base-map/
+Original source image: https://assets.science.nasa.gov/content/dam/science/esd/eo/images/bmng/bmng-base/july/world.200407.3x5400x2700.jpg
+Bundled delivery image is the 2048x1024 downsample documented by MaxwellLee/physics-lab.
+Pinned derivative source: https://github.com/MaxwellLee/physics-lab/blob/71807f8e5f3f8cfd29630ea46e4cf00d15693bc5/assets/textures/earth_2048.jpg
+Derivative documentation: https://github.com/MaxwellLee/physics-lab/blob/71807f8e5f3f8cfd29630ea46e4cf00d15693bc5/assets/textures/SOURCES.md
+Bundled earth-day.jpg SHA256: e47dbbf0e8b0603f25b963d7d74396e2554894ddbcbae5c21ef7045cc035e9ea
+
+Cloud texture
+Three.js r180 Earth-cloud example asset, used under the repository's MIT distribution.
+https://github.com/mrdoob/three.js/blob/r180/examples/textures/planets/earth_clouds_1024.png
+Git blob: 5c6b17b74ce05f1c589d60a92a9d66635a5e4990
+Bundled earth-clouds.png SHA256: 7d3b82ef6b3feb506fc06f02a744aed3d864e23e7417075005f4082a7ff935a4
+The corresponding MIT license is retained as THREE_ASSET_LICENSE.txt.
+No Three.js runtime or code is used by the hero.
+
+The globe and static poster are Archo renderings of historical textures with illustrative lighting and atmosphere. They are not live weather, telemetry or an analytical GIS layer. The cloud texture is an example rendering asset, not an observation at the displayed date.
+
+NASA image-use guidance: https://www.nasa.gov/nasa-brand-center/images-and-media/
+NASA is acknowledged as the surface-imagery source. No NASA mark is used and no NASA affiliation or endorsement is claimed.
+
+Motion and fallback
+Native WebGL is the preferred renderer: at most 30 rendered frames/second, at most 1200px in either direction. If WebGL is unavailable, a bounded Canvas2D orthographic projection uses the same qualified local textures: at most 4 rendered frames/second, at most 480px in either direction. Only simple timing bookkeeping occurs between rendered frames. Slow rotation is illustrative (not the actual current orientation of Earth).
+
+Pause control, reduced-motion default, offscreen/document-hidden suspension and route cleanup are implemented. If neither renderer can start, a static poster remains visible. On WebGL context loss, the static poster remains visible and the control reports Static Earth. Reinitializing the component or reopening the page can retry rendering.
+
+Actual browser verification, 2026-10-29: this cloud browser reported WebGL unavailable. Canvas2D fallback rendered and rotated; the frame counter and longitude changed. Pause held frame 97 and angle -1.13160 stable across observations; Play resumed at frame 100. The renderer uses a 480x480 drawing surface in this desktop view. Scrolling the sphere fully offscreen held frame 26 and angle -1.30143 stable; returning to the hero resumed frame 27. WebGL output and context-loss behavior require a WebGL-capable browser and were not demonstrated here. Reduced-motion and hidden-document paths are implemented but were not independently emulated in this review.
