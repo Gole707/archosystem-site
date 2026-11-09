@@ -44,25 +44,15 @@
 
 .portfolio-hero-copy h1 {
   margin: 0.4rem 0 0.85rem;
-  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-size: clamp(2rem, 5.5vw, 4.5rem);
   line-height: 1.04;
+  text-wrap: balance;
 }
 
 .portfolio-intro {
-  max-width: 36ch;
-  font-size: clamp(1.08rem, 1.8vw, 1.4rem);
-  line-height: 1.5;
-}
-
-.portfolio-venture {
   max-width: 54ch;
-  margin-top: 1rem;
-}
-
-.portfolio-experience {
-  margin-block: 1.25rem 1.5rem;
-  color: var(--muted);
-  font-size: 0.875rem;
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.5;
 }
 
 .portfolio-project-number {
