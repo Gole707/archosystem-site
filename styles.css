@@ -229,3 +229,13 @@
 .public-intelligence-intro .public-intelligence-lenses{margin-top:26px}
 #company .scene-actions .text-link{font-size:10px;gap:18px;letter-spacing:.08em}
 @media(max-width:560px){.home-company-definition{font-size:16px;max-width:32ch;line-height:1.6;margin-top:22px}.public-intelligence-intro .home-company-definition+.lede{font-size:20px;max-width:27ch}.home-stage{font-size:12px;max-width:34ch;margin-top:19px}.public-intelligence-intro .scene-actions,.tank-hero .scene-actions{align-items:flex-start;flex-direction:column;gap:12px}.public-intelligence-intro .public-intelligence-lenses{font-size:10px;line-height:1.7;margin-top:23px}#company .scene-actions{align-items:flex-start;gap:15px}#company .founder-description{font-size:19px}}
+
+@media (min-width: 821px) and (max-width: 1160px) {
+  .site-header:has(#site-nav [href="/portfolio/"]) { padding-inline: 3vw; gap: 14px; }
+  .header-tools:has(#site-nav [href="/portfolio/"]) { gap: 14px; }
+  #site-nav:has([href="/portfolio/"]) {
+    gap: clamp(10px, 1.3vw, 16px);
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
