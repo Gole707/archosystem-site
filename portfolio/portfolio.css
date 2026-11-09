@@ -303,10 +303,24 @@
 }
 
 .project-photos,
+.project-location,
 .project-sources {
   margin-top: clamp(2rem, 5vw, 4rem);
   padding-top: clamp(1.35rem, 3vw, 2.35rem);
   border-top: 1px solid var(--line);
+}
+
+.project-location {
+  scroll-margin-top: 7rem;
+}
+
+.project-location-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem 1.5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
 }
 
 .project-photo-grid {
